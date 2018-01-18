@@ -1,19 +1,28 @@
 @import "normalize";
 @import "fonts";
 @import "vars";
+@import "popup";
 
 *,
 *:before,
 *:after
 	box-sizing: border-box
 
-html, body
-	width: 100%
 
 body
 	font-family: $font
+	width: 100%
 	color: #000
 	font-size: 20px
+	position: relative
+
+button
+	background: $accent
+	border: none
+	padding: 13px 19px
+	font-family: $font
+	font-size: 22px
+	color: #fff
 
 .clearfix:after
 	content: ""
@@ -21,6 +30,10 @@ body
 	clear: both
 
 /* FIRST SCREEN STYLES */
+#header-main
+	position: relative
+	border-bottom: 2px solid #3b3b3b
+	z-index: 5
 .login-search-row
 	height: 40px
 	background-color: #3b3b3b
@@ -51,13 +64,15 @@ body
 .header-menu-line 
 	display: flex
 	justify-content: space-between
-	padding: 30px 6% 22px 6%
+	align-items: flex-end
+	padding: 30px 6% 14px 6%
 	
 	a
 		color: #000
 		text-decoration: none
 		outline: none
-
+.logo-wrap
+	max-height: 46px
 .logo
 	font-family: 'Megrim'
 	font-size: 48px
@@ -66,6 +81,7 @@ body
 
 .header-menu-links
 	display: flex
+	margin: 0
 	
 	li
 		display: block
@@ -101,7 +117,9 @@ body
 	img
 		width: 100%
 		height: 100%
-		border: solid 2px #626262
+		border-bottom: solid 2px #626262
+		border-right: solid 2px #626262
+		border-left: solid 2px #626262
 .nav-img-half-row
 	width: 100%
 	display: flex
@@ -109,7 +127,27 @@ body
 
 	a
 		width: 50%
+.nav-img-half-row > img
+	border-top: solid 2px #626262
+/* HEADER DROPDOWN */
+.header-drop-down
+	position: absolute
+	top: calc(100% + 2px)
+	left: 0
+	background: #f8f8f8
+	opacity: 0.95
+	width: 100%
+	display: flex
+	flex-wrap: wrap
+	padding: 0 9.6% 33px 9.6%
 
+	.drop-down-el
+		padding: 33px 20px 0 20px
+		font-size: 18px
+		text-align: center
+		flex-grow: 1
+
+/* HEADER DROPDOWN END */
 /* END FIRST SCREEN */
 /* GENERAL */
 .heading
@@ -118,6 +156,7 @@ body
 	width: 100%
 	font-family: $font2
 	font-size: 36px
+	font-weight: normal
 	letter-spacing: 1.8px
 	text-align: center
 	color: #333
@@ -205,6 +244,7 @@ p
 	justify-content: center
 	align-items: center
 	outline: none
+	cursor: pointer
 
 	&:before,
 	&:after
@@ -374,8 +414,7 @@ p
 		height: 24px
 
 
-.footer-main-technical
-	display: none
+
 /* FOOTER END */
 
 .test-slider img
@@ -390,3 +429,432 @@ p
 		height: auto
 		align-items: center
 		justify-content: center
+
+/* CALL POPUP */
+.open-call-popup
+	width: 6.35%
+	height: auto
+	position: fixed
+	bottom: 4%
+	right: 4%
+
+#call-popup
+	position: relative
+	background: #FFF
+	padding: 20px
+	width:auto
+	max-width: 700px
+	margin: 20px auto
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	text-align: center
+
+	form
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		width: 100%
+
+	input, textarea
+		width: 70%
+		font-family: $font
+		font-size: 16px
+		padding: 9px 11px
+		outline: none
+		border: 2px solid #484848
+		margin-bottom: 27px
+
+	textarea
+		resize: none
+
+	p
+		margin: 0
+		font-size: 24px
+		line-height: 1.5
+		&:nth-child(2)
+			margin-bottom: 27px
+
+	.mfp-close
+		font-size: 40px
+
+.footer-main-technical
+	width: 100%
+/* CALL POPUP END */
+
+/* CATALOG */
+
+/* FIRST SCREEN */
+
+.common-main
+	width: 100%
+	padding: 15px 5.8% 40px 5.8%
+	min-height: 100vh
+
+.catalog-links
+	width: 100%
+	display: flex
+	flex-wrap: wrap
+	padding: 0 9.6% 5px 9.6%
+
+	.catalog-link
+		padding: 33px 20px 0 20px
+		font-size: 18px
+		text-align: center
+		flex-grow: 1
+
+		a
+			text-decoration: none
+			color: #333
+			outline: none
+
+/* breadcrumbs */
+
+.breadcrumbs
+	display: block
+	margin: 0
+	padding: 0
+	a, li
+		font-family: $font
+		font-size: 14px
+		color: #666
+		text-decoration: none
+
+	li
+		list-style: none
+		display: inline
+
+/* breadcrumbs end */
+
+.catalog-description
+	display: block
+	width: 100%
+	margin: 18px 0
+	padding: 0
+	font-family: "RobotoRegular"
+	font-weight: 300
+	font-style: normal
+	font-stretch: normal
+	font-size: 24px
+	letter-spacing: 4.6px
+	text-align: center
+	color: #333333
+
+.cat-wrap
+	display: flex
+
+/* FILTERS */
+
+.sub-cat-name-wrap
+	width: 100%
+	border-bottom: 4px solid #2e7996
+	margin-bottom: 20px
+
+.sub-cat-name
+	font-size: 24px
+	font-weight: 500
+	color: #2e7996
+	letter-spacing: 1.2px
+
+.sorting-form
+	float: right
+	font-family: $font
+	font-size: 14px
+	letter-spacing: 0.7px
+	color: #666
+	
+	position: relative
+	margin-top: 4px
+	&:after
+		content: ''
+		display: block
+		width: 15px
+		height: 15px
+		background: url(../img/sublist_arrow.svg)
+		transform: rotate(90deg)
+		position: absolute
+		bottom: 3px
+		right: 5px
+
+	.select-hidden
+		font-family: $font
+		font-size: 14px
+		letter-spacing: 0.7px
+		padding: 3px 30px 3px 0
+
+.select-hidden
+	display: none
+
+.select-styled
+	user-select: none
+	cursor: pointer
+	padding: 3px 30px 3px 0
+	background: #fff
+	z-index: 10
+	&.select-open
+		border: 1px solid #666
+
+.select-options
+	cursor: pointer
+	user-select: none
+	display: none
+	position: absolute
+	top: 100%
+	left: 0
+	right: 0
+	background: #fff
+	line-height: 1.5
+	border: 1px solid #666
+	border-top: none
+	margin: 0
+	padding: 0
+	list-style: none
+	li:hover
+		background: #ddd
+
+		
+
+/* CHECKBOX STYLINGS */
+.catalog-filters
+	width: 230px
+	flex-basis: 230px
+	flex-shrink: 0
+
+
+
+.checkbox-filters .checkbox-wrap:last-child
+	margin-top: 21px
+
+.checkbox-trigger
+	display: inline-block
+	cursor: pointer
+	position: relative
+	padding-left: 25px
+	margin-right: 15px
+	font-size: 14px
+	color: #666666
+	letter-spacing: 0.6px
+	  
+	-webkit-user-select: none
+	-moz-user-select:    none
+	-ms-user-select:     none
+
+.checkbox-trigger:before
+	content: ""
+	display: inline-block
+	width: 16px
+	height: 16px
+	margin-right: 9px
+	position: absolute
+	left: 0
+	bottom: 1px
+	border: 1px solid #666
+	border-radius: 3px
+
+.checkbox:checked + .checkbox-trigger:before
+	content: "\2713"
+	font-size: 15px
+	color: #666
+	text-align: center
+	line-height: 15px
+.checkbox
+	display: none
+/* CHECKBOX STYLINGS END */
+
+/* DROPDOWN FILTERS */
+.dropdown-filter
+	display: flex
+	flex-direction: column
+	margin-top: 38px
+
+.filter-content
+	height: 330px
+.filter-name-wrap
+	padding-right: 15px
+	border-bottom: 1px solid #444
+	margin-bottom: 20px
+	position: relative
+	cursor: pointer
+	&:after
+		content: ''
+		display: block
+		width: 15px
+		height: 15px
+		background: url(../img/sublist_arrow.svg)
+		transform: rotate(-90deg)
+		position: absolute
+		bottom: 2px
+		right: 1px
+		transition: all .4s
+
+		
+	&.filter-open:after
+		transform: rotate(-270deg)
+.filter-name
+	font-family: $fontm
+	font-size: 20px
+	line-height: 1.2
+	color: #333
+
+.filter-search input
+	font-size: 12px
+	border: solid 1px #a0a0a0
+	padding: 9px
+	width: 100%
+	outline: none
+
+.filter-content
+	margin: 25px 0 0 0
+	padding: 0 0 0 5px
+	font-size: 14px
+	color: #333
+	letter-spacing: 0.7px
+	line-height: 24px
+
+	.mCSB_scrollTools
+		width: 5px
+
+
+/* DROPDOWN FILTERS END */
+
+/* FILTERS END */
+
+.cat-content-wrap
+	flex-grow: 1
+	padding-left: 47px
+
+.pagination
+	list-style: none
+	font-size: 16px
+	display: flex
+	justify-content: flex-end
+	margin: 0
+	padding: 0
+
+	li
+		margin-left: 10px
+
+	a
+		color: #666
+		text-decoration: none
+
+.cat-content
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin: 0 -30px 50px -30px
+.cat-product
+	width: 180px
+	max-width: 180px
+	text-align: center
+	flex-basis: 180px
+	margin: 0 30px
+	
+	img
+		max-width: 100%
+		height: auto
+	a
+		outline: none
+		text-decoration: none
+		color: #010101
+		display: flex
+		flex-direction: column
+		height: 100%
+.cat-product-img-wrap
+	height: 210px
+	width: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+
+	img
+		max-height: 210px
+		max-width: 100%
+.cat-product-info
+	margin-bottom: 15px
+	flex-grow: 1
+.cat-product-name
+	font-family: $fontm
+	font-size: 18px
+	color: #333
+	margin-top: 30px
+	margin-bottom: 13px
+.cat-product-description
+	font-size: 14px
+.cat-product-price
+	font-family: $fontm
+	font-size: 22px
+	color: #5894ab
+.cat-buy-btn
+	margin-top: 14px
+	width: 100%
+/* FIRST SCREEN END */
+
+/* CATALOG END */
+
+/* CONTACT PAGE */
+.contact
+	margin-top: 16px
+
+	p
+		margin: 22px 0
+		font-size: 20px
+
+	.city
+		font-family: $fontm
+		font-size: 24px
+		font-weight: 500
+		letter-spacing: 1.2px
+		color: #333
+
+	.phones span
+		vertical-align: top
+
+	.phones span:last-child
+		display: inline-block
+		text-align: center
+
+		a
+			display: block
+			text-decoration: none
+			outline: none
+			color: #333
+.map-wrap
+	height: 80vh
+/* CONTACT PAGE END */
+
+/* ARTICLES PAGE */
+.articles-list
+	display: flex
+	flex-wrap: wrap
+	flex-direction: row
+	justify-content: space-between
+	width: 100%
+	margin: 0 -2.6%
+
+	.article
+		width: 28%
+		margin: 50px 2.6% 0 2.6%
+	img
+		max-width: 100%
+	a
+		text-decoration: none
+		outline: none
+
+.article-name
+	font-size: 24px
+	letter-spacing: 1.2px
+	color: #333
+	margin: 15px 0
+.article-description
+	font-size: 14px
+	letter-spacing: 0.7px
+	color: #555
+	line-height: 1.5
+.article-date
+	font-size: 12px
+	color: #777
+	margin-top: 20px
+/* ARTICLES PAGE END*/
