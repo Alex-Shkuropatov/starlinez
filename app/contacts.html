@@ -64,8 +64,10 @@
 				</ul>
 			</nav>
 			<div class="cart-icon-wrap">
-				<img src="img/shopping-bag.svg" alt="">
-				<span class="cart-quantity">(0)</span>
+				<div class="cart-open-trigger">
+					<img src="img/shopping-bag.svg" alt="">
+					<span class="cart-quantity">(0)</span>
+				</div>
 			</div>
 		</div>
 	</header>
@@ -151,6 +153,48 @@
 					<textarea name="message" rows="8" placeholder="Текст собщения"></textarea>
 					<button type="submit">Перезвоните мне</button>
 				</form>
+			</div>
+			<div id="cart-popup" class="mfp-hide">
+				<span class="cart-name">КОРЗИНА</span>
+				<div class="cart-list">
+					<div class="cart-item">
+						<div class="img-wrap">
+							<img src="img/products/6200402.jpeg" alt="">
+						</div>
+						<div class="cart-item-info-wrap">
+							<div class="cart-item-info">
+								<p class="name">
+									<a href="#">Lorem ipsum</a>
+									<span class="price">127 грн</span>
+								</p>
+								<p class="description">Lorem ipsum is simply dummy text</p>
+							</div>
+							<div class="cart-item-controls">
+								<form action="#" class="ms2_form changeCount" method="POST">
+									<button class="minus">-</button>
+									<input type="number" name="count" value="1" class="cartItemCount">
+									<button class="plus">+</button>
+									<button class="hidden cart_change" type="submit" name="ms2_action" value="cart/change"></button>
+								</form>
+								<form action="#" class="ms2_form removeItem" method="POST">
+									<button class="cart_remove" type="submit" name="ms2_action" value="cart/remove">
+										<span class="cross"></span>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="cart-info">
+					<div class="row">
+						<span>Итого:</span>
+						<span class="ms2_total_cost">127 грн</span>
+					</div>
+					<div class="goToOrder-wrap">
+						<button class="goToOrder">Оформить покупку</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>

@@ -126,4 +126,17 @@ $( document ).ready( function(){
 
 	});
 
+	/* cart magnific popup */
+	$('.cart-open-trigger').magnificPopup({
+		items: {
+		    src: '#cart-popup',
+		    type: 'inline'
+		},
+		mainClass: 'mfp-fade',
+		removalDelay: 250,
+		callbacks: {
+			
+		}
+	});
+
 });
