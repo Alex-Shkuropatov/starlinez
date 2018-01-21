@@ -1,0 +1,120 @@
+/* MEDIUM */
+/* MEDIUM END */
+@media (max-width: 1100px)
+	.advantages-list
+		justify-content: center
+
+		li
+			width: 33%
+
+/* EXTRA SMALL-SMALL */
+@media (max-width: 992px)
+	.advantages-list
+		justify-content: center
+
+		li
+			width: 50%
+@media (max-width: 970px)
+	.header-menu-line
+		position: relative
+	.header-menu-links
+		display: none
+	.header-menu-links-wrap
+		order: 3
+	.cart-icon-wrap
+		width: auto
+	.header-menu-mobile-btn
+		display: block
+	
+	.header-menu-links-wrap
+		.header-menu-links
+			box-sizing: border-box
+			max-height: 0
+			background: #fff
+			position: absolute
+			top: 0
+			right: 6%
+			padding: 0px 50px 0px 39px
+			overflow: hidden
+			display: block
+			opacity: 0
+			transition: max-height 1s, opacity 0s 0.75s
+			left: 6%
+			
+			li
+				margin: 37px 0
+				&:first-child
+					margin-top: 50px
+				&:last-child
+					margin-bottom: 70px
+	.menu-open + .header-menu-links
+		max-height: 200vh
+		opacity: 1
+		transition: max-height 1s, opacity 0s
+
+@media (max-width: 768px)
+	.geometria-heading
+		font-size: 24px
+		letter-spacing: 1.2px
+	.geometria-small
+		font-size: 14px
+	p
+		font-size: 14px
+		letter-spacing: 0.7px
+	.brand-slide-innner
+		flex-direction: column
+		padding-left: 0
+	.brand-content
+		width: 100%
+		text-align: center
+	.brand-img
+		display: none
+	.brand-content img
+		display: block
+		max-width: 100%
+
+	.brand-show-more
+		font-size: 17px
+	.second-heading
+		font-size: 24px
+		letter-spacing: 1.2px
+	.our-advantages
+		text-align: center
+
+
+/* EXTRA SMALL-SMALL */
+
+/* EXTRA SMALL */
+
+@media (max-width: 512px)
+	.header-icon-wrap
+		font-size: 12px
+	.nav-images
+		flex-direction: column
+	.nav-img-half-col
+		width: 100%
+	.brand-preview-slide:after,
+	.brand-preview-slide:before
+		display: none
+	.brand-preview-slide.slick-current .brand-preview-slide-img-wrap:before
+		display: none
+	.advantages-list li
+		flex-direction: column
+	.phone-footer
+		display: none
+	.footer-main-inner
+		justify-content: center
+
+@media (min-width: 512px) and (max-width: 650px)
+	.header-menu-line .logo-wrap
+		width: 193px
+
+@media (max-width: 650px)
+	.header-icon-wrap:nth-child(3)
+		margin-left: 0
+	.login-search-row
+		justify-content: space-between
+	.header-menu-line .logo
+		font-size: 30px
+
+/* EXTRA SMALL END*/

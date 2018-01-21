@@ -55,7 +55,7 @@ input
 		height: 28px
 		width: auto
 
-	&:nth-child(4)
+	&:nth-child(3)
 		margin-left: auto
 	&:nth-child(1)
 		margin-left: 0
@@ -82,6 +82,60 @@ input
 	letter-spacing: 2.4px
 	text-transform: uppercase
 
+/* MOBILE MENU */
+.header-menu-mobile-btn
+	display: none
+	width: 46px
+	height: 40px
+	position: relative
+	z-index: 10
+
+	&:after,
+	&:before
+		left: 0
+		right: 0
+	
+	&:after,
+	&:before,
+	span:after
+		content: ''
+		display: block
+		position: absolute
+		width: 100%
+		height: 2px
+		background: #000
+		transition: 0.25s all ease-out
+		opacity: 1
+	&:before
+		top: 0
+	&:after
+		bottom: 0
+	span
+		display: block
+		position: absolute
+		width: 100%
+		height: 2px
+		background: #000
+		top: calc( 50% - 1px)
+		transition: 0.25s all ease-out
+	span:after
+
+	&.menu-open
+		&:after,
+		&:before
+			opacity: 0
+			right: 50%
+			left: 50%
+			width: 0
+		span
+			transform: rotate(-135deg) scaleX(1.2) scaleY(1)
+		span:after
+			transform: rotate(270deg) scaleX(1.2) scaleY(0.833)
+		
+
+
+
+/* MOBILE MENU */
 .header-menu-links
 	display: flex
 	margin: 0
@@ -109,7 +163,7 @@ input
 .nav-images
 	display: flex
 	/* height: calc(100vh - 155px) */
-	height: 620px
+	/* height: 620px */
 	a
 		display: block
 
@@ -184,7 +238,7 @@ p
 	letter-spacing: 1px
 	color: #333
 .brands
-	padding: 60px 5.8% 0 5.8%
+	padding: 60px 5.8% 30px 5.8%
 	border-bottom: 2px solid #ebecec
 	min-height: 100vh
 
@@ -204,7 +258,8 @@ p
 .brand-content,
 .brand-img
 	width: 47%
-
+.brand-content img
+	display: none
 .brand-show-more
 	background-color: $accent
 	font-family: $font
@@ -376,6 +431,7 @@ p
 	margin: 15px 0
 .advantages-list
 	display: flex
+	flex-wrap: wrap
 	justify-content: space-between
 	list-style: none
 	margin: 0
@@ -985,3 +1041,5 @@ input::-webkit-inner-spin-button
 .goToOrder-wrap
 	text-align: center
 /* CART POPUP END*/
+
+@import "media";
