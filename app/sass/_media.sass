@@ -1,5 +1,8 @@
 /* MEDIUM */
 /* MEDIUM END */
+@media (max-width: 1250px)
+	.cat-product
+		width: 26.7%
 @media (max-width: 1100px)
 	.advantages-list
 		justify-content: center
@@ -11,6 +14,8 @@
 @media (max-width: 992px)
 	.advantages-list
 		justify-content: center
+	.cat-product
+		width: 43.36%
 
 		li
 			width: 50%
@@ -94,9 +99,99 @@
 		font-size: 16px
 	.breadcrumbs + .heading
 		margin-top: 25px
+	.catalog-description
+		font-size: 18px
+	.sub-cat-name
+		font-size: 16px
+	.cat-product-name
+		font-size: 15px
+	.cat-product-description
+		font-size: 11.8px
+	.cat-product-price,
+	.cat-buy-btn
+		font-size: 18px
+	.cat-wrap
+		flex-direction: column
+	.catalog-filters
+		width: 100%
+	.sorting-form-desctop
+		display: none
+	.cat-content-wrap
+		padding-left: 0
+	.cat-product
+		width: 26.7%
+
+	/*soting forms and buttons*/
+	.sorting-form-mobile
+		display: block
+	.sorting-form-desktop
+		display: none
+	.catalog-filters-holder
+		position: absolute
+		background: #fff
+		width: 100%
+		top: calc(100% + 2px)
+		padding: 0 3%
+		z-index: 11
+		max-height: 0
+		overflow: hidden
+		transition: max-height .4s
+
+		&.catalog-filters-open
+			display: block
+			border: solid 1px #666
+			max-height: 200vh
+			transition: max-height .4s
+	.dropdown-filter:last-child
+		margin-bottom: 35px
+	.checkbox-filters
+		margin-top: 35px
+	.mob-buttons
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+
+	.catalog-filters
+		width: 100%
+		flex-basis: auto
+
+		.select-options
+			width: 100%
+			padding: 0 3%
+			border: solid 1px #666
+			top: calc(100% + 2px)
+
+			li
+				padding: 17px 0
+				font-size: 16px
+				&.active,
+				&:hover
+					color: $accent
+				&:first-child
+					padding-top: 48px
+				&:last-child
+					padding-bottom: 47px
+		.select-styled
+			display: none
+	.mobileFiltersBtn,
+	.mobileSortBtn
+		display: block
+		width: calc( 50% - 1px )
+		background: #fff
+		border: 1px solid #666
+		padding: 12px 0
+		text-align: center
+		color: #666
+		font-size: 14px
+	.cat-content-wrap .pagination
+		margin-top: 50px
+		margin-bottom: 50px
+		justify-content: center
+		&:last-child
+			margin-bottom: 10px
 
 
-/* EXTRA SMALL-SMALL */
+/* EXTRA SMALL-SMALL (0-768)*/
 
 /* EXTRA SMALL */
 
@@ -123,6 +218,10 @@
 		font-size: 12px
 	.articles-list .article
 		width: 94.8%
+	.cat-product
+		width: 43.36%
+	.open-call-popup
+		width: 55px
 
 @media (min-width: 512px) and (max-width: 650px)
 	.header-menu-line .logo-wrap
@@ -137,3 +236,7 @@
 		font-size: 30px
 
 /* EXTRA SMALL END*/
+
+/* EXTRA LARGE */
+	
+/* EXTRA LARGE END */

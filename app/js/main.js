@@ -128,8 +128,23 @@ $( document ).ready( function(){
 	/* DROPDOWN FILTERS */
 	$( '.filter-name-wrap' ).click(function(){
 		$( this ).toggleClass( 'filter-open' );
-		var filterContent = $( this ).parent().children( '.filter-content-wrap' );
-		filterContent.slideToggle();
+		//close othe dropdowns on mobiles
+		if( window.innerWidth <= 768 ){
+			$('.filter-name-wrap').not(this).each(function(){
+	      $(this).removeClass('filter-open');;
+	  	});
+		}
+	});
+
+	//opening MobileSortFilter filter
+	$( '#mobileSortBtn' ).click(function(){
+		$( '.sorting-form-mobile .select-styled' ).click();
+		return false;
+	});
+	//opening Mobile Dropdown filters
+	$( '#mobileFiltersBtn' ).click(function(){
+		$( '.catalog-filters-holder' ).toggleClass( 'catalog-filters-open' );
+		return false;
 	});
 
 	/* OWN CUSTOM SELECT */
@@ -137,14 +152,20 @@ $( document ).ready( function(){
 	    var $this = $(this); 
 	    numberOfOptions = $(this).children('option').length;
 
-	    //var selectWidth = $this.width();
+	    //set width of true select?
+	    var setWidth = false;
+	    if( $this.hasClass('setWidth') ){
+	    	setWidth = true;
+	    }
 
 
 	    $this.wrap('<div class="select-styled-wrap"></div>');
 	    $this.after('<div class="select-styled"></div>');
 
 	    var $styledSelect = $this.next('div.select-styled');
-	    $styledSelect.outerWidth( $this.outerWidth() );
+	    if( setWidth ){
+	    	$styledSelect.outerWidth( $this.outerWidth() );
+	    }
 	    $styledSelect.text($this.children('option').eq(0).text());
 	  
 	    var $list = $('<ul />', {
@@ -154,7 +175,15 @@ $( document ).ready( function(){
 	    for (var i = 0; i < numberOfOptions; i++) {
 	        $('<li />', {
 	            text: $this.children('option').eq(i).text(),
-	            rel: $this.children('option').eq(i).val()
+	            rel: $this.children('option').eq(i).val(),
+	            class: function(){
+	            	//highlight current selected value using class
+	            	var classStr = 'styled-option';
+	            	if($this.children('option').eq(i).text() == $this.find(":selected").text() ){
+	            		classStr += ' active';
+	            	}
+	            	return classStr;
+	            }
 	        }).appendTo($list);
 	    }
 	  
@@ -165,7 +194,7 @@ $( document ).ready( function(){
 	        $('div.select-styled.select-open').not(this).each(function(){
 	            $(this).removeClass('select-open').next('ul.select-options').hide();
 	        });
-	        $(this).toggleClass('select-open').next('ul.select-options').toggle();
+	        $(this).toggleClass('select-open').next('ul.select-options').slideToggle();
 	    });
 	  
 	    $listItems.click(function(e) {
@@ -173,7 +202,7 @@ $( document ).ready( function(){
 	        $styledSelect.text($(this).text()).removeClass('select-open');
 	        $this.val($(this).attr('rel'));
 	        $list.hide();
-	        //console.log($this.val());
+	        $this.trigger('change');
 	    });
 	  
 	    $(document).click(function() {

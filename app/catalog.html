@@ -106,8 +106,8 @@
 		<div class="sub-cat-name-wrap">
 			<span class="sub-cat-name">Уход за лицом</span>
 
-			<form action="#" class="sorting-form" action="POST">
-				<select name="sorting" class="sorting select-hidden" id="olo">
+			<form action="#" class="sorting-form sorting-form-desktop" action="POST">
+				<select name="sorting" class="sorting select-hidden setWidth">
 					<option value="1">Сортировать по умолчанию</option>
 					<option value="2">ololo</option>
 					<option value="3">ololo</option>
@@ -119,123 +119,116 @@
 		<!-- SIDEBAR -->
 		<aside class="catalog-filters">
 			
-			<form action="#" class="checkbox-filters" action="POT">
-
-				<div class="checkbox-wrap">
-					<input class="checkbox" type="checkbox" id="availability" name="availability">
-					<label class="checkbox-trigger" for="availability">Есть в наличии</label>
-				</div>
-				<div class="checkbox-wrap">
-					<input class="checkbox" type="checkbox" id="shares" name="shares">
-					<label class="checkbox-trigger" for="shares">Акции</label>
-				</div>
-
+			<div class="mob-buttons">
+				<button class="mobileFiltersBtn" id="mobileFiltersBtn">Фильтр</button>
+				<button class="mobileSortBtn" id="mobileSortBtn">Сортировать</button>
+			</div>
+			<form action="#" class="sorting-form sorting-form-mobile" action="POST">
+				<select name="sorting" class="sorting select-hidden">
+					<option value="1">Сортировать по умолчанию</option>
+					<option value="2">По возрастанию цены</option>
+					<option value="3">По убыванию цены</option>
+					<option value="4">Новинки</option>
+				</select>
 			</form>
 
-			<div class="dropdown-filter">
-				<div class="filter-name-wrap">
-					<span class="filter-name">Бренд</span>
-				</div>
-				<div class="filter-content-wrap" style="display: none">
-					<form action="#" class="filter-search" id="brand-search" action="POST">
-						<input type="text" placeholder="Поиск">
-					</form>
-					<ul class="scroll filter-content">
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-					</ul>
-				</div>
-			</div>
 
-			<div class="dropdown-filter">
-				<div class="filter-name-wrap">
-					<span class="filter-name">Вид продукции</span>
+
+			<div class="catalog-filters-holder">
+				
+				<form action="#" class="checkbox-filters" action="POST">
+
+					<div class="checkbox-wrap">
+						<input class="checkbox" type="checkbox" id="availability" name="availability">
+						<label class="checkbox-trigger" for="availability">Есть в наличии</label>
+					</div>
+					<div class="checkbox-wrap">
+						<input class="checkbox" type="checkbox" id="shares" name="shares">
+						<label class="checkbox-trigger" for="shares">Акции</label>
+					</div>
+
+				</form>
+
+				<div class="dropdown-filter">
+					<div class="filter-name-wrap">
+						<span class="filter-name">Бренд</span>
+					</div>
+					<div class="filter-content-wrap">
+						<form action="#" class="filter-search" id="brand-search" action="POST">
+							<input type="text" placeholder="Поиск">
+						</form>
+						<ul class="scroll filter-content">
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+						</ul>
+					</div>
 				</div>
-				<div class="filter-content-wrap" style="display: none">
-					<form action="#" class="filter-search" id="brand-search" action="POST">
-						<input type="text" placeholder="Поиск">
-					</form>
-					<ul class="scroll filter-content">
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-						<li>JEAN D’ESTREES (3)</li>
-					</ul>
+
+				<div class="dropdown-filter">
+					<div class="filter-name-wrap">
+						<span class="filter-name">Вид продукции</span>
+					</div>
+					<div class="filter-content-wrap">
+						<form action="#" class="filter-search" id="brand-search" action="POST">
+							<input type="text" placeholder="Поиск">
+						</form>
+						<ul class="scroll filter-content">
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+							<li>JEAN D’ESTREES (3)</li>
+						</ul>
+					</div>
 				</div>
+
 			</div>
 
 		</aside>

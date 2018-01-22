@@ -606,6 +606,9 @@ p
 	display: flex
 
 /* FILTERS */
+.mob-buttons,
+.sorting-form-mobile
+	display: none
 
 .sub-cat-name-wrap
 	width: 100%
@@ -618,7 +621,7 @@ p
 	color: #2e7996
 	letter-spacing: 1.2px
 
-.sorting-form
+.sorting-form.sorting-form-desktop
 	float: right
 	font-family: $font
 	font-size: 14px
@@ -648,32 +651,37 @@ p
 .hidden
 	display: none
 
+.sorting-form-desktop
+	.select-styled
+		padding: 3px 30px 3px 0
+		background: #fff
+		&.select-open
+			border: 1px solid #666
+
+	.select-options
+		top: 100%
+		left: 0
+		right: 0
+		background: #fff
+		line-height: 1.5
+		border: 1px solid #666
+		border-top: none
+		li:hover
+			background: #ddd
 .select-styled
 	user-select: none
 	cursor: pointer
-	padding: 3px 30px 3px 0
-	background: #fff
 	z-index: 10
-	&.select-open
-		border: 1px solid #666
-
 .select-options
 	cursor: pointer
 	user-select: none
 	display: none
 	position: absolute
-	top: 100%
-	left: 0
-	right: 0
-	background: #fff
-	line-height: 1.5
-	border: 1px solid #666
-	border-top: none
 	margin: 0
 	padding: 0
 	list-style: none
-	li:hover
-		background: #ddd
+
+
 
 		
 
@@ -682,6 +690,7 @@ p
 	width: 230px
 	flex-basis: 230px
 	flex-shrink: 0
+	position: relative
 
 
 
@@ -730,8 +739,16 @@ p
 	flex-direction: column
 	margin-top: 38px
 
+.filter-content-wrap
+	max-height: 0
+	overflow: hidden
+	transition: max-height .4s ease-out
+.filter-open + .filter-content-wrap
+	max-height: 388px
+	transition: max-height .4s ease-out
+
 .filter-content
-	height: 330px
+	max-height: 330px
 .filter-name-wrap
 	padding-right: 15px
 	border-bottom: 1px solid #444
@@ -773,6 +790,7 @@ p
 	color: #333
 	letter-spacing: 0.7px
 	line-height: 24px
+	max-height: 285px
 
 	.mCSB_scrollTools
 		width: 5px
@@ -804,14 +822,16 @@ p
 .cat-content
 	display: flex
 	flex-wrap: wrap
-	justify-content: space-between
-	margin: 0 -30px 50px -30px
+	/* justify-content: space-between */
+	margin: 0 -3.316% 50px -3.316%
 .cat-product
-	width: 180px
-	max-width: 180px
+	/* width: 180px */
+	/* max-width: 180px */
+	width: 18.366%
 	text-align: center
-	flex-basis: 180px
-	margin: 0 30px
+	/* flex-basis: 180px */
+	/* margin: 0 30px */
+	margin: 0 3.316%
 	
 	img
 		max-width: 100%
