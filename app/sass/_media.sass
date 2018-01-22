@@ -17,7 +17,8 @@
 @media (max-width: 970px)
 	.header-menu-line
 		position: relative
-	.header-menu-links
+	.header-menu-links,
+	.catalog-links
 		display: none
 	.header-menu-links-wrap
 		order: 3
@@ -34,12 +35,12 @@
 			position: absolute
 			top: 0
 			right: 6%
+			left: 6%
 			padding: 0px 50px 0px 39px
 			overflow: hidden
 			display: block
 			opacity: 0
 			transition: max-height 1s, opacity 0s 0.75s
-			left: 6%
 			
 			li
 				margin: 37px 0
@@ -80,6 +81,19 @@
 		letter-spacing: 1.2px
 	.our-advantages
 		text-align: center
+	.heading
+		font-size: 24px
+	.article-name
+		font-size: 18px
+		letter-spacing: 0.9px
+	.articles-list .article
+		width: 44%
+	.contact .city
+		font-size: 18px
+	.contact p
+		font-size: 16px
+	.breadcrumbs + .heading
+		margin-top: 25px
 
 
 /* EXTRA SMALL-SMALL */
@@ -104,6 +118,11 @@
 		display: none
 	.footer-main-inner
 		justify-content: center
+	.breadcrumbs a,
+	.breadcrumbs li
+		font-size: 12px
+	.articles-list .article
+		width: 94.8%
 
 @media (min-width: 512px) and (max-width: 650px)
 	.header-menu-line .logo-wrap
