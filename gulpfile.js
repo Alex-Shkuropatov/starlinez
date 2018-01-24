@@ -1,5 +1,6 @@
 var gulp 		= require('gulp'),
 	sass 		= require('gulp-sass'),
+	wait = require('gulp-wait'),
 	browserSync = require('browser-sync').create();
 	concat      = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
     uglify      = require('gulp-uglifyjs'); // Подключаем gulp-uglifyjs (для сжатия JS)
@@ -8,6 +9,7 @@ var gulp 		= require('gulp'),
 
 gulp.task('sass', function(){
 	return gulp.src('app/sass/**/*.sass')
+	.pipe(wait(500))
 	.pipe(sass({includePaths: require('node-normalize-scss').includePaths}))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream());

@@ -17,7 +17,11 @@
 				<a href="tel:+3800000000" class="header-tel">+3800000000</a>
 			</div>
 			<div class="header-icon-wrap">
-				<img src="img/search.svg" alt="">
+				<img src="img/search.svg" alt="" class="search-trigger">
+				<form action="#" class="header-search-form header-search-hidden" action="POST">
+					<input type="text" class="header-search">
+					<button type="button">OK</button>
+				</form>
 			</div>
 			<div class="header-icon-wrap">
 				<img src="img/woman-with-hat.svg" alt="">
@@ -43,8 +47,8 @@
 						<a href="articles.html">Статьи</a>
 					</li>
 					<li>
-						<a href="catalog.html">Ассортимент</a>
-						<div class="header-drop-down" style="display: none">
+						<a href="catalog.html" class="header-drop-down-trigger">Ассортимент</a>
+						<div class="header-drop-down header-drop-down-closed">
 							<div class="drop-down-el"><a href="#">Уход за телом</a></div>
 							<div class="drop-down-el"><a href="#">Уход за лицом</a></div>
 							<div class="drop-down-el"><a href="#">Уход за волосами</a></div>

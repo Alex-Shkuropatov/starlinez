@@ -11,7 +11,17 @@ $( document ).ready( function(){
 	/* header mobile menu */
 	$( '.header-menu-mobile-btn' ).click(function(){
 		$( this ).toggleClass( 'menu-open' );
-		//$(this).next().animate({height: 'toggle'});
+	});
+	/* header-search */
+	$( '.search-trigger' ).click(function(){
+		var form = $( '.header-search-form' );
+		if( form.hasClass('header-search-hidden') ){
+			$('.header-search').focus();
+		}
+		else{
+			$('.header-search').blur();
+		}
+		form.toggleClass( 'header-search-hidden' );
 	});
 
 	/* show more button on brand slider on main page*/
@@ -116,7 +126,11 @@ $( document ).ready( function(){
 
 	/* desktop dropdown in header */
 	$( '.header-drop-down' ).parent().click(function( e ){
-		$(this).children('.header-drop-down').slideToggle();
+		//if( window.innerWidth >= 970 ){
+		$(this).children('.header-drop-down-trigger').toggleClass('header-drop-triggered');
+		$(this).children('.header-drop-down').toggleClass('header-drop-down-closed');
+			//$(this).children('.header-drop-down').toggleClass('header-drop-down-closed').slideToggle();
+		//}
 		e.preventDefault();
 	});
 

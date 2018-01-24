@@ -37,15 +37,18 @@
 			box-sizing: border-box
 			max-height: 0
 			background: #fff
+			background: url(../img/menu.png), rgba(255,255,255,1)
+			background-repeat: repeat-y
+			background-size: 100%
 			position: absolute
 			top: 0
-			right: 6%
-			left: 6%
-			padding: 0px 50px 0px 39px
+			right: 0
+			left: 0
+			padding: 0px 50px 0px 50px
 			overflow: hidden
 			display: block
 			opacity: 0
-			transition: max-height 1s, opacity 0s 0.75s
+			transition: max-height .4s, opacity 0s 0.75s
 			
 			li
 				margin: 37px 0
@@ -56,7 +59,27 @@
 	.menu-open + .header-menu-links
 		max-height: 200vh
 		opacity: 1
-		transition: max-height 1s, opacity 0s
+		transition: max-height .4s, opacity 0s
+	.header-drop-down
+		display: block
+		position: static
+		background: none
+		.drop-down-el
+			text-align: left
+			padding: 15px 0
+			&:last-child
+				margin-bottom: 0
+	.header-drop-down-trigger:after
+		content: ''
+		display: inline-block
+		background: url(../img/sublist_arrow.svg)
+		width: 15px
+		height: 15px
+		margin-left: 10px
+		transform: rotate(90deg)
+		transition: all .4s, opacity 0s 0.75s
+	.header-drop-triggered:after
+		transform: rotate(-90deg)
 
 @media (max-width: 768px)
 	.geometria-heading
@@ -159,6 +182,7 @@
 			width: 100%
 			padding: 0 3%
 			border: solid 1px #666
+			background: #fff
 			top: calc(100% + 2px)
 
 			li
@@ -222,6 +246,8 @@
 		width: 43.36%
 	.open-call-popup
 		width: 55px
+	.advantages-list li
+		width: 50%
 
 @media (min-width: 512px) and (max-width: 650px)
 	.header-menu-line .logo-wrap
@@ -235,8 +261,44 @@
 	.header-menu-line .logo
 		font-size: 30px
 
-/* EXTRA SMALL END*/
+	.header-search-form
+		display: block
+		display: flex
+		position: absolute
+		top: 40px
+		left: 0
+		right: 0
+		background: #3b3b3b
+		padding: 5px 6%
+		z-index: 15
+		width: 100%
+		overflow: hidden
+		max-height: 45px
+		transition: max-height .4s, padding-top .4s, padding-bottom .4s
 
-/* EXTRA LARGE */
-	
-/* EXTRA LARGE END */
+		button
+			padding: 3px 15px
+			background: darken(#3b3b3b, 2%)
+			font-size: 18px
+			border: 1px solid darken(#3b3b3b, 10%)
+			border-radius: 5px
+			margin-left: 5px
+	.header-search
+		margin: 0
+		/* width: 100% */
+		flex-grow: 1
+		max-width: 100%
+	.header-search-form.header-search-hidden
+		max-height: 0
+		padding: 0 6%
+
+@media (min-width: 651px)
+	.header-search-form.header-search-hidden
+		.header-search
+			max-width: 0
+			padding: 0
+			border: transparent
+	.header-search-form
+		button
+			display: none
+
