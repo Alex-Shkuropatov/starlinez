@@ -81,6 +81,18 @@
 	.header-drop-triggered:after
 		transform: rotate(-90deg)
 
+	/*news img*/
+	.news-img-wrap
+		width: 263px
+		height: 160px
+	.news-description-wrap
+		width: calc(93% - 263px)
+	.news-description
+		margin: 0
+		max-height: 100px
+
+	/*news img*/
+
 @media (max-width: 768px)
 	.geometria-heading
 		font-size: 24px
@@ -111,7 +123,9 @@
 		text-align: center
 	.heading
 		font-size: 24px
-	.article-name
+	.article-name,
+	.news-name,
+	.product-characteristics .name
 		font-size: 18px
 		letter-spacing: 0.9px
 	.articles-list .article
@@ -213,9 +227,47 @@
 		justify-content: center
 		&:last-child
 			margin-bottom: 10px
+	.msGallery
+		width: 100%
+		margin: 50px 0
+	.product-characteristics
+		width: 100%
+	.product-characteristics .name,
+	.product-characteristics .short-description,
+	.product-characteristics .price,
+	.terms-of-payment,
+	.buy-product
+		text-align: center
+	.product-characteristics .name
+		font-size: 18px
+	.product-characteristics .short-description
+		font-size: 16px
+	.vendor
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+	.specifications
+		display: flex
+		flex-direction: column
+	/*news img*/
+	.news-img-wrap
+		width: 100%
+		height: auto
+	.news-description-wrap
+		width: 100%
+		margin-left: 0
+	.news-description
+		max-height: none
+	.news-description-wrap a
+		text-align: center
+	.news
+		width: 85%
+		margin: 0 auto
+
+	/*news img*/
 
 
-/* EXTRA SMALL-SMALL (0-768)*/
+/* EXTRA SMALL-SMALL (0-768) END*/
 
 /* EXTRA SMALL */
 
@@ -248,6 +300,26 @@
 		width: 55px
 	.advantages-list li
 		width: 50%
+	.product-characteristics .terms-of-payment 
+		.delimiter
+			display: none
+		a
+			display: block
+			&:last-child
+				margin-top: 20px
+	.additional-info
+		flex-direction: column
+		.half-column
+			width: 100%
+	.p404
+		h1
+			font-size: 130px
+	/*news img*/
+	.news
+		width: 100%
+		margin: 0
+
+	/*news img*/
 
 @media (min-width: 512px) and (max-width: 650px)
 	.header-menu-line .logo-wrap

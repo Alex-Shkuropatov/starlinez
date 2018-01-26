@@ -126,12 +126,14 @@ $( document ).ready( function(){
 
 	/* desktop dropdown in header */
 	$( '.header-drop-down' ).parent().click(function( e ){
-		//if( window.innerWidth >= 970 ){
-		$(this).children('.header-drop-down-trigger').toggleClass('header-drop-triggered');
-		$(this).children('.header-drop-down').toggleClass('header-drop-down-closed');
-			//$(this).children('.header-drop-down').toggleClass('header-drop-down-closed').slideToggle();
-		//}
-		e.preventDefault();
+		var $target = $(e.target), res = true;
+		if( !$target.closest(".header-drop-down").length ){
+			$(this).children('.header-drop-down-trigger').toggleClass('header-drop-triggered');
+			$(this).children('.header-drop-down').toggleClass('header-drop-down-closed');
+			res = false;
+		}
+		return res;
+		//return false;
 	});
 
 	/* custom scrollbar in filters in catalog */

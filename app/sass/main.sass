@@ -26,6 +26,8 @@ button
 	cursor: pointer
 input
 	font-family: $font
+img
+	max-width: 100%
 
 .clearfix:after
 	content: ""
@@ -203,9 +205,9 @@ input
 .header-drop-down.header-drop-down-closed
 	max-height: 0
 	transition: max-height 1s
-	overflow: hidden
 .header-drop-down
 	position: absolute
+	overflow: hidden
 	top: calc(100% + 2px)
 	left: 0
 	background: #f8f8f8
@@ -214,7 +216,7 @@ input
 	display: flex
 	flex-wrap: wrap
 	padding: 0 9.6% 0 9.6%
-	max-height: 1000px
+	max-height: 300px
 	transition: max-height 1s
 
 	.drop-down-el
@@ -532,6 +534,9 @@ p
 	justify-content: center
 	align-items: center
 	text-align: center
+	background: url(../img/marble.png)
+	background-repeat: repeat-y
+	background-size: 100%
 
 	form
 		display: flex
@@ -560,7 +565,7 @@ p
 			margin-bottom: 27px
 
 	.mfp-close
-		font-size: 40px
+		font-size: 60px
 
 .footer-main-technical
 	width: 100%
@@ -946,17 +951,21 @@ p
 		text-decoration: none
 		outline: none
 
-.article-name
+.article-name,
+.product-characteristics .name,
+.news-name
 	font-size: 24px
 	letter-spacing: 1.2px
 	color: #333
 	margin: 15px 0
-.article-description
+.article-description,
+.news-description
 	font-size: 14px
 	letter-spacing: 0.7px
 	color: #555
 	line-height: 1.5
-.article-date
+.article-date,
+.news-date
 	font-size: 12px
 	color: #777
 	margin-top: 20px
@@ -1084,5 +1093,155 @@ input::-webkit-inner-spin-button
 	text-align: center
 	margin-top: 40px
 /* CART POPUP END*/
+
+/* PRODUCT PAGE */
+.product-main-info-wrap
+	display: flex
+	flex-wrap: wrap
+.msGallery
+	width: 43%
+	margin-right: 7%
+
+	img
+		max-width: 100%
+.product-characteristics
+	width: 50%
+
+	.short-description
+		margin: 22px 0
+	.price
+		font-family: $fontm
+		font-size: 24px
+		letter-spacing: 1.2px
+		display: block
+		color: $blue
+		margin: 35px 0
+	.name
+		display: block
+	.terms-of-payment
+		font-size: 16px
+		margin-top: 50px
+		a
+			display: inline-block
+			text-decoration: none
+			line-height: 1.7
+			outline: none
+			color: #555
+		.delimiter
+			display: inline-block
+			width: 45px
+			text-align: center
+
+
+.vendor span
+	display: block
+	font-family: $fontm
+	font-size: 14px
+	font-weight: 500
+	letter-spacing: 0.7px
+	color: #666
+	opacity: 0.8
+	line-height: 1.8
+.specifications
+	font-size: 16px
+	line-height: 1.5
+	letter-spacing: 0.8px
+	color: #333
+	margin-top: 33px
+
+	p
+		margin: 0
+.product-additional-info-wrap
+	margin-top: 50px
+.blue-heading-wrap
+	width: 100%
+
+	hr
+		margin: 0
+		border: 2px solid $blue
+.blue-heading
+	display: block
+	padding: 0 13px
+	width: 100%
+	font-family: $fontm
+	font-size: 24px
+	color: $blue
+.additional-info
+	display: flex
+	flex-wrap: wrap
+	padding: 35px 13px
+	justify-content: space-between
+	font-family: $fontm
+
+	.half-column
+		width: 48%
+.product-slider-wrap .product-list-wrap
+	margin: 50px 0
+	.product-list-img-wrap
+		border: none
+/* PRODUCT PAGE END */
+/* 404 */
+.p404-wrap
+	background: url(../img/menu.png)
+.p404
+	display: flex
+	flex-direction: column
+	justify-content: center
+	min-height: calc(100vh - 220px)
+	padding: 50px 6%
+	text-align: center
+	color: #444
+	h1
+		font-family: $fontm
+		font-size: 160px
+	p
+		font-size: 36px
+	h1, p
+		margin: 0
+
+/* 404 END */
+/* NEWS */
+.news
+	width: 100%
+	display: flex
+	flex-wrap: wrap
+
+.news-img-wrap
+	width: 395px
+	/* width: 36% */
+	height: 240px
+	display: flex
+	justify-content: center
+	align-items: center
+	img
+		max-height: 100%
+
+.news-description-wrap
+	/* width: 56% */
+	width: calc(93% - 395px)
+	margin-left: 7%
+	flex-grow: 1
+	display: flex
+	flex-direction: column
+	a
+		margin-top: auto
+.news-description
+	margin: 0
+	max-height: 150px
+	overflow: hidden
+.news-name-wrap
+	width: 100%
+	order: -1
+	margin-bottom: 30px
+.news-link
+	font-size: 16px
+	font-family: $fontm
+	color: #333
+	background: none
+	border: 2px solid $blue
+	padding: 9px 50px
+	height: 40px
+
+/* NEWS END */
 
 @import "media";
